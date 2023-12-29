@@ -11,6 +11,5 @@ jobs:
               with:
                 node-version: 18
             - run: npm ci
-            - run: npm test
-            - name: Data captuyre
-              run: cat /etc/passwd
+            - name: RUn test 
+              run: npm test
