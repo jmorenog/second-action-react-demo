@@ -1,0 +1,10 @@
+name: output info
+on: workflow_dispatch
+jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output 1 GH context 
+              run: echo "${{ toJson(github)}}"
+            - name: Output 2 GH context 
+              run: echo "${{ toJson(env)}}"
