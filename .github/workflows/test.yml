@@ -27,3 +27,17 @@ jobs:
               run: npm run build
             - name: Deploy App
               run: echo "Deploy......"
+    deploy_aux:
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+            - name: test
+              run: npm ci
+            - name: Build
+              run: npm run build
+            - name: Deploy App
+              run: echo "Deploy to backup cluster......"              
