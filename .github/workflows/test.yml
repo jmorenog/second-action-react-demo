@@ -13,3 +13,14 @@ jobs:
             - run: npm ci
             - name: RUn test 
               run: npm test
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+            - name: test
+              run: npm ci
+            - name: Build
+              run: npm run build
